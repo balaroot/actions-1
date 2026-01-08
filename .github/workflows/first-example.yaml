@@ -1,0 +1,16 @@
+name: my first worklow
+on: push
+jobs:
+    first-job:
+        runs-on: ubuntu-24.04
+        steps:
+        - name: welcome message
+          run: echo "bala is good"
+
+        - name: list files
+          run: ls -ltrh
+        
+        - name: read file
+          run: cat README.md
+          
+
