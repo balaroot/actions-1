@@ -1,0 +1,17 @@
+name: Multiple comment and third party libraries
+on: push
+jobs:
+    second_job:
+        runs-on: ubuntu-latest
+        steps:
+        - name: checout repo
+          uses: actions/checkout@v6
+
+        - name: List and Read file
+          run: |
+            echo " my second github actions job"
+            ls -ltrha
+            cat README.md 
+
+        - name: adding third party library
+          run: cowsay -f dragon "i m gragon" >> dragon.txt
