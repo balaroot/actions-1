@@ -7,6 +7,9 @@ jobs:
         - name: checkout the repo
           uses: actions/checkout@v6
 
+        - name: list the files
+          run: ls -ltrh
+
         - name: execute the shell
           run: |
             chmod +x ./ascii.sh
