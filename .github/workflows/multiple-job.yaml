@@ -9,14 +9,19 @@ jobs:
         
         - name: Generate dragon.txt
           run: cowsay -f dragon "I m dragon" >> dragon.txt
+
+        - name: Sleep
+          run: sleep 30
     
     test_job:
+        needs: build_job
         runs-on: ubuntu-latest
         steps:
         - name: check if file exists
           run: grep -i "dragon" dragon.txt
 
     deploy_job:
+        needs: test_job
         runs-on: ubuntu-latest
         steps:
         - name: read the file
