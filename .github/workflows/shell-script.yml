@@ -9,5 +9,5 @@ jobs:
 
         - name: execute the shell
           run: |
-             chmod +x ascii.sh
-             ./ascii.sh
+            chmod +x ascii.sh
+            ./ascii.sh
