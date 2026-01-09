@@ -1,0 +1,12 @@
+name: Execute shell script in workflow
+on: push
+jobs:
+    execute_shell_script_in_workflow:
+        runs-on: ubuntu-latest
+        steps:
+        - name: checkout the repo
+          uses: actions/checkout@v6
+
+        - name: execute the shell
+          run: ./ascii.sh
+          
