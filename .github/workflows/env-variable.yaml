@@ -1,0 +1,68 @@
+# name: environment variable
+# on: push
+# jobs:
+#     build:
+#         runs-on: ubuntu-latest
+#         steps:
+#         - name: Docker build
+#           run: docker build -t docker.io/dockerusername/imagename:latest
+#     test:
+#         needs: build
+#         runs-on: ubuntu-latest
+#         steps:
+#         - name: Docker login
+#           run: docker login --username=dockerusername --password=s3CurepaSsw0rd
+   
+
+       
+          
+# # Env variable at step level
+
+# name: environment variable
+# on: push
+# jobs:
+#     build:
+#         runs-on: ubuntu-latest
+#         steps:
+#         - name: Docker build
+#           env:
+#             CONTAINER_REGISTRY: docker.io
+#             DOCKER_USERNAME: 181292
+#             DOCKER_PASSWORD: G3r3en220$
+#           run: docker build -t $CONTAINER_REGISTRY/$DOCKER_USERNAME/$DOCKER_PASSWORD
+
+
+# Env Variable at job level
+
+# name: environment variable
+# on: push
+# jobs:
+#     build:
+#         env:
+# #          CONTAINER_REGISTRY: docker.io
+# #          DOCKER_USERNAME: 181292
+# #          DOCKER_PASSWORD: G3r3en220$
+#         runs-on: ubuntu-latest
+#         steps:
+#         - name: Docker build
+#           run: docker build -t $CONTAINER_REGISTRY/$DOCKER_USERNAME/$DOCKER_PASSWORD
+
+
+# Env variables at workflow level
+
+name: env variable
+on: push
+env:
+    CONTAINER_REGISTRY: docker.io
+    DOCKER_USERNAME: 181292
+    DOCKER_PASSWORD: G3r3en220$
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+        - name: docker login
+          run: docker build -t $CONTAINER_REGISTRY/$DOCKER_USERNAME/$DOCKER_PASSWORD
+
+
+
+                
