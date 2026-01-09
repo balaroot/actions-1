@@ -4,7 +4,7 @@ jobs:
     second_job:
         runs-on: ubuntu-latest
         steps:
-        - name: checout repo
+        - name: checkout repo
           uses: actions/checkout@v6
 
         - name: List and Read file
