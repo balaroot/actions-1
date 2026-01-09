@@ -4,6 +4,9 @@ jobs:
     first-job:
         runs-on: ubuntu-24.04
         steps:
+        - name: checkout repo
+          uses: actions/checkout@v6
+          
         - name: welcome message
           run: echo "bala is good"
 
@@ -12,5 +15,5 @@ jobs:
         
         - name: read file
           run: cat README.md
-          
+
 
